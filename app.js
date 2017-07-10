@@ -9,8 +9,8 @@ var http = require('http');
 var path = require('path');
 
 //load list route
-var retail = require('./routes/retail');
-var retailweb = require('./routes/retailweb');
+var benefits = require('./routes/benefits');
+var benefitsweb = require('./routes/benefitsweb');
 var app = express();
 
 var connection  = require('express-myconnection');
@@ -46,7 +46,7 @@ app.use(
         user: 'dbadmin',
         password : 'dbpassword',
         port : 3306, // port mysql service
-        database:'retail'
+        database:'benefits'
 
     },'pool') // pool or single
 
@@ -57,14 +57,14 @@ app.use(
 app.get('/', routes.index);
 
 // Base API
-app.get('/retail', retail.listall);
-app.get('/retail/list', retail.listsummary);
-app.get('/retail/details/:id', retail.details);
+app.get('/benefits', benefits.listall);
+app.get('/benefits/list', benefits.listsummary);
+app.get('/benefits/details/:id', benefits.details);
 
 // Web application
-app.get('/retailweb', retailweb.listall);
-app.get('/retailweb/list', retailweb.listsummary);
-app.get('/retailweb/details/:id', retailweb.details);
+app.get('/benefitsweb', benefitsweb.listall);
+app.get('/benefitsweb/list', benefitsweb.listsummary);
+app.get('/benefitsweb/details/:id', benefitsweb.details);
 
 
 

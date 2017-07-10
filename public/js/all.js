@@ -1,8 +1,8 @@
 function addUser(){
 
-    window.location.href = '/retailweb/add';
+    window.location.href = '/benefitsweb/add';
 }
 function cancelAdd(){
 
-    window.location.href = '/retailweb';
+    window.location.href = '/benefitsweb';
 }

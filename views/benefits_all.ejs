@@ -1,0 +1,19 @@
+{
+    "<%=page_item%>": [{
+            <% if(data.length){
+                for(var i = 0;i < data.length;i++) {
+                if (i > 0) { %>
+                }, {
+                <% } else { %>
+                <% } %>
+                "id": "<%=data[i].id%>",
+                "name": "<%=data[i].title%>",
+                "status": "<%=data[i].type%>",
+                "type": "<%=data[i].description%>",
+                "paymentdate": "<%=data[i].height%>",
+                "paymentamount": "<%=data[i].width%>"
+                <% }
+             } else { %>
+            <% } %>
+        }]
+}
